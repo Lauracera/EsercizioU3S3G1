@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Product } from './product';
+import { Product, ProductResponse } from './product';
 
 @Injectable({ providedIn: 'root' })
 export class ServiceNameService {
@@ -17,7 +17,7 @@ export class ProductService {
     this.url = 'https://dummyjson.com/products';
   }
 
-  getAllProduct(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.url);
+  getAllProduct(): Observable<ProductResponse> {
+    return this.http.get<ProductResponse>(this.url);
   }
 }
